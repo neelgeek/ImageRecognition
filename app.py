@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/getCount",methods=['POST'])
 def postImg():
     r = request
-    
+
     nparr = np.fromstring(r.data, np.uint8)
 
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
@@ -23,6 +23,7 @@ def postImg():
 @app.route("/",methods=['GET'])
 def default():
     return "Welcome !"
+
 if __name__ == '__main__':
     print("App Started")
     app.run(debug=True)
