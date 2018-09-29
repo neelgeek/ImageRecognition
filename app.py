@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 app = Flask(__name__)
 
+
 @app.route("/getCount",methods=['POST'])
 def postImg():
     r = request
