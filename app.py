@@ -20,4 +20,5 @@ def postImg():
 
     return Response(response=response_pickled, status=200, mimetype="application/json")
 if __name__ == '__main__':
+    print("App Started")
     app.run(debug=True)
