@@ -11,8 +11,7 @@ from werkzeug import secure_filename
 import os
 import json
 from darknet import detectormain as dm
-
-
+# from darknet import detectormain
 
 app = Flask(__name__)
 

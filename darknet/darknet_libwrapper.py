@@ -3,10 +3,13 @@
 import ctypes
 import math
 import random
+import os
+import pathlib
 # For dll open path from file relative or caller working directory
-lib_path = "/home/neel/ImageRecognition/darknet/libdarknet.so"
-
-
+dirpath = os.getcwd()
+foldername = os.path.realpath(dirpath)
+lib_path = os.path.join(foldername,'darknet\libdarknet.so')
+print(lib_path)
 
 def sample(probs):
     s = sum(probs)
