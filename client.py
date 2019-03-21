@@ -25,8 +25,14 @@ def req(i):
         print("Sending Request to Server for",imagelist[i])
         r = requests.post(url,files=files)
         data = r.json()
+        bus = 0
+        truck = 0
         car = data["b'car'"]
-        weighted_sum = car *2;
+        if "b'bus'" in data:
+            bus = data["b'bus'"]
+        if "b'truck'" in data:
+            truck = data["b'truck'"]
+        weighted_sum = car*2 + bus *4+truck*4;
         print("Weighted Sum =",weighted_sum)
         t_green=e.red_traffic(weighted_sum)
         print("Green Time =",t_green)
